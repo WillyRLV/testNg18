@@ -1,0 +1,27 @@
+<table datatable [dtOptions]="dtOptions" class="row-border hover">
+</table>
+
+<!-- Selector de idioma -->
+<label for="language-select">Select Language: </label>
+<select id="language-select" (change)="onLanguageChange($event)">
+    <option value="" selected>Seleccione un lenguaje</option>
+    <option value="es">Spanish</option>
+    <option value="fr">French</option>
+
+</select>
+<br />
+
+<!-- Seleccionar formato-->
+<label for="language-select">Select format: </label>
+<select id="language-select" (change)="onFormatChange($event)">
+    <option value="" selected>Seleccione un formato</option>
+    <option value="datetime">datetime</option>
+    <option value="relative">relative</option>
+    <option value="duration">duration</option>
+
+</select>
+<br />
+{{date}}
+<br />
+<relative-time [format]="selectedFormat" weekday='long' year="numeric" month="long"  prefix=""
+    [lang]="selectedLanguage" [datetime]=date></relative-time>
